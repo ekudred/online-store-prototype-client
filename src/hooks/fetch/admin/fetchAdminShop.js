@@ -5,9 +5,7 @@ import socket from '../../../API/socket'
 
 export function useCreateProduct() {
   // name, type_id, brand_id, price, img
-  const createProduct = product => {
-    console.log(product)
-    socket.emit('admin/product:create', { ...product })}
+  const createProduct = product => socket.emit('admin/product:create', { ...product })
   return { createProduct }
 }
 export function useDeleteProduct() {
@@ -67,7 +65,8 @@ export function useAdminShopSubscription() {
   useEffect(() => {
     socket.on('admin/product:created', data => {
       console.log(data)
-      setAdminProduct(data)})
+      setAdminProduct(data)
+    })
     socket.on('admin/product:deleted', data => deleteAdminProduct(data))
     socket.on('admin/product:edited', data => editAdminProduct(data))
 

@@ -47,26 +47,8 @@ export default function Home() {
                 </NavLink>
               </div>
             ))}
+            {loading ? Array(5).fill(0).map((item, i) => <LoadableBox key={i} width='200px' height='220px' />) : ''}
           </Slider>
-
-          {/* {loading ? (
-              <>
-                <LoadableBox width='200px' height='220px' />
-                <LoadableBox width='200px' height='220px' />
-                <LoadableBox width='200px' height='220px' />
-                <LoadableBox width='200px' height='220px' />
-                <LoadableBox width='200px' height='220px' />
-              </>
-            ) : (
-              ''
-            )}
-            {popularProducts.map(item => (
-              <div className={styles.item} key={item.product._id}>
-                <NavLink to={DefaultRoutesConstants.PRODUCTS_ROUTE + '/' + item.product._id} className={styles.img}>
-                  <Image src={`${SERVER_URL}/${item.product.img}`} />
-                </NavLink>
-              </div>
-            ))} */}
         </div>
       </div>
     </div>

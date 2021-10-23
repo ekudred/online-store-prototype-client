@@ -15,7 +15,7 @@ export default function UsersTable() {
   const [activeUsers, setActiveUsers] = useState([])
 
   const { setSkipAdminUsers, setTotalCountAdminUsers, setAdminUsers } = useActions()
-  const { getUsers, data, loading } = useGetUsers()
+  const { getUsers, data } = useGetUsers()
   const { deleteUser } = useDeleteUser()
 
   const loadMore = useCallback(() => {

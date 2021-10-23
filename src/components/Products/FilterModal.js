@@ -17,7 +17,7 @@ export default function FilterModal({ setVisibleModal }) {
   const [brand, setBrand] = useState({})
 
   const { setSkipProducts, setTotalCountProducts, setProducts, clearProducts, setFilter } = useActions()
-  const { getProducts, data: dataProducts, loading } = useGetProducts()
+  const { getProducts, data: dataProducts } = useGetProducts()
 
   const onClickRemove = () => setVisibleModal(false)
   const onClickSetFilter = () => getProducts({ type_id: filter.type._id, brand_id: filter.brand._id, limit, skip: 0 })
