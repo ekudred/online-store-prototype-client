@@ -1,0 +1,116 @@
+@import './styles/_variables.scss';
+@import './styles/_fonts.scss';
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+body {
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  display: block;
+  color: $color-3;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a,
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  outline: inherit;
+  border: inherit;
+  background-color: inherit;
+
+  &:focus {
+    outline: inherit;
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  display: none;
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='file'] {
+  visibility: hidden;
+}
+
+input {
+  &:disabled {
+    color: inherit;
+  }
+}
+
+button {
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  height: 100vh;
+
+  background-color: $color-2;
+
+  font-family: 'Roboto-Regular', sans-serif;
+  font-size: 16px;
+  color: $color-1;
+
+  overflow: hidden;
+}

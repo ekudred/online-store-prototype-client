@@ -1,0 +1,292 @@
+@import '../variables.scss';
+
+.product {
+  padding-top: 3.3rem;
+
+  .head {
+    position: fixed;
+    z-index: 1;
+    top: 3.3rem;
+    left: 0;
+
+    width: 100%;
+
+    background-color: rgba($color-2, 0.5);
+    box-shadow: 0 0 5px rgba($color-1, 0.2);
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      max-width: 1920px;
+
+      margin: 0 auto;
+      padding: 0.4rem 1rem;
+
+      .backward {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 2.5rem;
+        height: 2.5rem;
+
+        cursor: pointer;
+
+        border-radius: 50%;
+
+        &:hover,
+        &:focus {
+          background-color: rgba($color-1, 0.1);
+        }
+
+        svg {
+          width: 1.3rem;
+          height: 1.3rem;
+
+          fill: $color-1;
+        }
+      }
+    }
+  }
+
+  .body {
+    display: flex;
+
+    @media (max-width: 812px) {
+      flex-direction: column;
+    }
+
+    .box {
+      display: flex;
+      flex-direction: column;
+
+      width: 100%;
+
+      &:nth-child(1) {
+        max-width: 540px;
+
+        @media (max-width: 812px) {
+          max-width: 100%;
+        }
+      }
+
+      &:nth-child(2) {
+        margin-left: 2rem;
+
+        @media (max-width: 812px) {
+          margin: 2rem 0 0 0;
+        }
+      }
+
+      .stars {
+        margin-bottom: 1rem;
+
+        pointer-events: none;
+      }
+
+      .title {
+        & > *:not(:last-child) {
+          margin-bottom: 1rem;
+        }
+
+        span {
+          font-style: italic;
+        }
+      }
+
+      .buttons {
+        display: flex;
+        flex-direction: column;
+
+        margin-top: 1rem;
+
+        & > * {
+          margin-bottom: 0.5rem;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+
+        .case {
+          display: flex;
+
+          justify-content: space-between;
+
+          & > * {
+            width: 100%;
+
+            margin-right: 0.5rem;
+
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+        }
+
+        .add {
+          background-color: $color-4;
+
+          &:hover {
+            background-color: rgba($color-4, 0.9);
+          }
+        }
+
+        .edit {
+          background-color: $color-3;
+
+          &:hover,
+          &:focus {
+            background-color: rgba($color-3, 0.9);
+          }
+        }
+
+        .delete {
+          background-color: $color-1;
+
+          &:hover,
+          &:focus {
+            background-color: rgba($color-1, 0.9);
+          }
+        }
+      }
+
+      .calc {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+
+        margin-top: 1rem;
+
+        &.disabled {
+          .amount {
+            pointer-events: none;
+
+            color: rgba($color-1, 0.5);
+
+            .input {
+              box-shadow: none;
+              color: rgba($color-1, 0.5);
+            }
+
+            .label {
+              .increment,
+              .decrement {
+                box-shadow: none;
+
+                svg {
+                  fill: rgba($color-1, 0.5);
+                }
+              }
+            }
+          }
+
+          .price {
+            box-shadow: none;
+            color: rgba($color-1, 0.5);
+          }
+        }
+
+        .amount {
+          display: flex;
+
+          width: 100%;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          .input {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 4rem;
+
+            text-align: center;
+
+            margin-right: 0.5rem;
+            padding: 1rem;
+
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba($color-1, 0.2);
+            background-color: $color-f;
+          }
+
+          .label {
+            display: flex;
+
+            .increment,
+            .decrement {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+
+              width: 3rem;
+              height: 100%;
+
+              text-align: center;
+
+              cursor: pointer;
+
+              border-radius: 5px;
+              box-shadow: 0 0 5px rgba($color-1, 0.2);
+              background-color: $color-f;
+
+              &:hover,
+              &:focus {
+                background-color: rgba($color-4, 0.1);
+              }
+
+              &:active {
+                background-color: rgba($color-4, 0.05);
+              }
+
+              &:first-child {
+                margin-right: 0.5rem;
+              }
+
+              svg {
+                width: 0.9rem;
+                height: 0.9rem;
+
+                fill: $color-1;
+              }
+            }
+          }
+        }
+
+        .price {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          width: 100%;
+
+          margin-top: 0.5rem;
+
+          text-align: center;
+
+          margin-right: 1rem;
+          padding: 1rem;
+
+          pointer-events: none;
+
+          border-radius: 5px;
+          box-shadow: 0 0 5px rgba($color-1, 0.2);
+          background-color: $color-f;
+
+          &::after {
+            content: 'РУБ';
+
+            margin-left: 0.3rem;
+
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+  }
+}

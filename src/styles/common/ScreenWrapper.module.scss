@@ -1,0 +1,62 @@
+@import '../_variables.scss';
+
+.wrapper {
+  position: relative;
+
+  width: 100%;
+  min-height: calc(100vh - 3.3rem);
+
+  overflow: hidden;
+
+  &::before,
+  &::after {
+    content: '';
+
+    position: absolute;
+    top: 0vh;
+    left: 50vw;
+    z-index: -1;
+
+    width: 100vw;
+    height: 100vw;
+
+    pointer-events: none;
+
+    border-radius: 40% 45% 35% 40%;
+
+    @media (max-width: 768px) {
+      display: block;
+    }
+  }
+
+  &::before {
+    background-color: rgba($color-4, 0.2);
+    animation: wawes 20s linear infinite;
+  }
+
+  &::after {
+    right: 4%;
+    background-color: rgba($color-5, 0.2);
+    animation: wawes 14s linear infinite;
+  }
+
+  @keyframes wawes {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .holder {
+    max-width: 1366px;
+
+    margin: 0 auto;
+    padding: 2rem;
+
+    @media (max-width: 768px) {
+      padding: 0;
+    }
+  }
+}

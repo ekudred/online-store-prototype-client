@@ -1,0 +1,12 @@
+@import '../_variables.scss';
+
+.product {
+  background-color: $color-f;
+
+  box-shadow: 0 0 10px rgba($color-1, 0.2);
+
+  .box {
+    display: flex;
+    flex-direction: column;
+  }
+}

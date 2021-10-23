@@ -1,0 +1,84 @@
+@import '../_variables.scss';
+@import '../_mixins.scss';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 100%;
+
+  color: $color-f;
+
+  .burger {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 2.5rem;
+    height: 2.5rem;
+
+    cursor: pointer;
+
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+
+    &:hover,
+    &:focus {
+      background-color: rgba($color-2, 0.2);
+    }
+
+    svg {
+      width: 2.7rem;
+      height: 2.7rem;
+
+      padding: 0.3rem;
+
+      fill: $color-f;
+
+      border-radius: 50%;
+    }
+  }
+
+  .items {
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    height: 100%;
+
+    .holder {
+      height: 100%;
+    }
+
+    .console {
+      margin-right: 1rem;
+
+      border: 1px solid $color-f;
+      border-radius: 5px;
+
+      color: inherit;
+
+      cursor: pointer;
+
+      &:hover,
+      &:focus {
+        background-color: rgba($color-2, 0.2);
+      }
+
+      .bg {
+        background-color: $bg;
+      }
+
+      .pulse {
+        padding: 0.5rem 1rem;
+
+        overflow: hidden;
+      }
+    }
+  }
+}

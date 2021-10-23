@@ -1,0 +1,28 @@
+@import '../variables.scss';
+
+.filter {
+  padding: 0.7rem;
+
+  align-self: center;
+
+  background-color: rgba($color-1, 0.9);
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba($color-1, 0.2);
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba($color-1, 0.95);
+  }
+
+  &:active {
+    background-color: rgba($color-1, 1);
+  }
+
+  svg {
+    width: 1.2rem;
+    height: 1.2rem;
+
+    fill: $color-f;
+  }
+}

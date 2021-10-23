@@ -1,0 +1,68 @@
+@import '../_variables.scss';
+@import '../_mixins.scss';
+
+.item {
+  .link {
+    width: 100%;
+
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
+
+    color: $color-f;
+
+    overflow: hidden;
+
+    &:focus {
+      background-color: rgba($color-2, 0.2);
+    }
+
+    &:hover {
+      background-color: $color-2;
+
+      color: $color-1;
+
+      & svg {
+        fill: $color-1;
+      }
+    }
+
+    &.active {
+      background-color: $color-f;
+
+      color: $color-1;
+
+      pointer-events: none;
+
+      & svg {
+        fill: $color-1;
+      }
+    }
+
+    & .bg {
+      background-color: $color-1;
+    }
+
+    & .pulse {
+      display: flex;
+      align-items: center;
+
+      padding: 0.7rem 0 0.7rem 2rem;
+
+      border-bottom-right-radius: 25px;
+      border-top-right-radius: 25px;
+
+      overflow: hidden;
+    }
+
+    & svg {
+      width: 1.5rem;
+      height: 1.5rem;
+
+      margin-right: 1.3rem;
+
+      fill: $color-f;
+
+      pointer-events: none;
+    }
+  }
+}

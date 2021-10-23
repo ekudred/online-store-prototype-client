@@ -1,0 +1,51 @@
+@import '../_variables.scss';
+@import '../_mixins.scss';
+
+.button {
+  display: flex;
+  align-items: center;
+
+  height: 100%;
+
+  background-color: transparent;
+  
+  color: inherit;
+  letter-spacing: 1px;
+
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: rgba($color-2, 0.2);
+  }
+
+  &.title {
+    svg {
+      margin-right: 1rem;
+    }
+  }
+
+  &.active {
+    pointer-events: none;
+  }
+
+  & .pulse {
+    display: flex;
+    align-items: center;
+
+    padding: 0 0.8rem;
+  }
+
+  & svg {
+    width: 1.3rem;
+    height: 1.3rem;
+
+    fill: $color-f;
+
+    pointer-events: none;
+  }
+}
+
+.bg {
+  background-color: $color-2;
+}

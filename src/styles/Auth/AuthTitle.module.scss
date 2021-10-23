@@ -1,0 +1,35 @@
+@import '../_variables.scss';
+@import '../_mixins.scss';
+
+.title {
+  margin: 4rem 0;
+
+  @media (max-width: 768px) {
+    text-align: center;
+  }
+
+  & h1 {
+    margin-left: 4rem;
+    margin-bottom: 2rem;
+
+    color: $color-1;
+    font-size: 2rem;
+    line-height: 1.4;
+
+    @media (max-width: 768px) {
+      margin-left: 0;
+    }
+  }
+
+  & p {
+    margin-left: 5rem;
+
+    color: $color-1;
+    font-size: 1.3rem;
+    line-height: 1.2;
+
+    @media (max-width: 768px) {
+      margin-left: 0;
+    }
+  }
+}

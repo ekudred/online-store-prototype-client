@@ -1,0 +1,100 @@
+@import '../_variables.scss';
+@import '../_mixins.scss';
+
+.basket {
+  position: absolute;
+  top: 3.7rem;
+  right: 3rem;
+
+  width: 320px;
+
+  padding: 0.8rem;
+
+  background-color: $color-f;
+  border-radius: 5px;
+
+  box-shadow: 0 0 10px rgba($color-1, 0.2);
+
+  .button {
+    width: 100%;
+
+    background-color: $color-3;
+
+    margin-bottom: 0.5rem;
+
+    &:hover,
+    &:focus {
+      background-color: rgba($color-3, 0.9);
+    }
+  }
+
+  @media (max-width: 450px) {
+    width: 100vw;
+    top: 3.3rem;
+    right: -1rem;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .box {
+    width: 100%;
+    height: 180px;
+
+    @media (max-width: 450px) {
+      height: 270px;
+    }
+
+    .empty {
+      width: 100%;
+
+      text-align: center;
+
+      margin-top: 2rem;
+
+      color: $color-1;
+    }
+
+    &.enterActive {
+      top: 3rem;
+      opacity: 0;
+    }
+    &.enterDone {
+      opacity: 1;
+      transition: opacity 0.2s linear, top 0.2s linear;
+    }
+    &.exitActive {
+      opacity: 1;
+    }
+    &.exitDone {
+      top: 3rem;
+      opacity: 0;
+      transition: opacity 0.2s linear, top 0.2s linear;
+    }
+
+    & > div div:first-child {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+      grid-auto-rows: minmax(120px, auto);
+      grid-auto-flow: dense;
+      gap: 0.3rem;
+    }
+  }
+
+  &::before {
+    content: '';
+
+    position: absolute;
+    top: -27px;
+    right: 8px;
+
+    width: 15px;
+    height: 15px;
+
+    pointer-events: none;
+
+    border: 12px solid transparent;
+    border-bottom: 15px solid $color-f;
+  }
+}

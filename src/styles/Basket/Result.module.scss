@@ -1,0 +1,112 @@
+@import '../_variables.scss';
+@import '../_mixins.scss';
+
+.wrapper {
+  position: relative;
+
+  width: 320px;
+
+  @media (max-width: 1024px) {
+    order: -1;
+  }
+
+  .result {
+    display: flex;
+    flex-direction: column;
+
+    position: fixed;
+
+    width: 320px;
+    height: auto;
+
+    padding: 1rem;
+
+    background-color: $color-f;
+    box-shadow: 0 5px 15px rgba($color-1, 0.1);
+
+    border-radius: 10px;
+
+    @media (max-width: 1024px) {
+      position: relative;
+      order: -1;
+    }
+
+    & p {
+      font-size: 0.9rem;
+      color: rgba($color-1, 0.7);
+    }
+
+    & > div {
+      margin-bottom: 1rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    // @media (max-width: 768px) {
+    //   max-width: 100%;
+
+    //   box-shadow: 0 0 5px rgba($color-1, 0.4);
+
+    //   border-radius: 0;
+    // }
+
+    .price,
+    .delivery,
+    .payment {
+      & > * {
+        margin-bottom: 0.3rem;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .price {
+      .box {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .output {
+        &::after {
+          content: 'РУБ';
+
+          margin-left: 0.3rem;
+
+          font-size: 0.8rem;
+        }
+      }
+    }
+
+    .delivery,
+    .payment {
+      .box {
+        display: flex;
+
+        & h4 {
+          font-size: 1.1rem;
+        }
+
+        .output {
+          margin-left: 1rem;
+
+          color: $color-4;
+        }
+      }
+    }
+
+    .button {
+      margin-top: 1rem;
+
+      background-color: $color-3;
+
+      &:hover,
+      &:focus {
+        background-color: rgba($color-3, 0.9);
+      }
+    }
+  }
+}

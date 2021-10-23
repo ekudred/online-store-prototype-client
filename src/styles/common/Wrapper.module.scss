@@ -1,0 +1,21 @@
+@import '../_variables.scss';
+
+.wrapper {
+  display: block;
+
+  width: 100%;
+
+  .holder {
+    position: relative;
+
+    max-width: 1366px;
+    min-height: calc(100vh - 3.3rem);
+
+    margin: 0 auto;
+    padding: 2rem 1rem;
+
+    @media (max-width: 540px) {
+      padding: 1rem 0.5rem;
+    }
+  }
+}

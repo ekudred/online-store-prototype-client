@@ -1,0 +1,31 @@
+@import '../variables.scss';
+
+.button {
+  border-radius: 5px;
+
+  background-color: $color-1;
+  color: $color-f;
+
+  cursor: pointer;
+
+  .pulse {
+    padding: 1rem;
+  }
+
+  .cc {
+    background-color: $bg;
+  }
+
+  .loading {
+    display: inline-block;
+
+    clip-path: inset(0 1.5ch 0 0);
+    animation: dots 1.5s steps(4) infinite;
+  }
+
+  @keyframes dots {
+    to {
+      clip-path: inset(0 -0.5ch 0 0);
+    }
+  }
+}

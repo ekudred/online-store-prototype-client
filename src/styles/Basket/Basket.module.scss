@@ -1,0 +1,21 @@
+@import '../_variables.scss';
+@import '../_mixins.scss';
+
+.basket {
+  .title {
+    margin-bottom: 1rem;
+  }
+
+  .container {
+    display: flex;
+    align-items: flex-start;
+
+    @media (max-width: 1024px) {
+      flex-direction: column;
+    }
+
+    @media (max-width: 540px) {
+      align-items: center;
+    }
+  }
+}
